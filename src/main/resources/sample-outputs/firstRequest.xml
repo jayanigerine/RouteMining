@@ -1,0 +1,38 @@
+<xml>
+    <request>
+        <!--https://secure.shippingapis.com/ShippingAPI.dll?API=Verify&XML=-->
+        <AddressValidateRequest USERID="589STUDE0069" PASSWORD="032FL67RN368">
+            <Revision>1</Revision>
+            <Address ID="0">
+                <Address1></Address1>
+                <Address2>42074 Carriage cove cir</Address2>
+                <City>Canton</City>
+                <State>MI</State>
+                <Zip5>48187</Zip5>
+                <Zip4/>
+            </Address>
+        </AddressValidateRequest>
+    </request>
+    <!-- Response -->
+    <Response>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <AddressValidateResponse>
+            <Address ID="0">
+                <Address2>42074 CARRIAGE COVE CIR</Address2>
+                <City>CANTON</City>
+                <State>MI</State>
+                <Zip5>48187</Zip5>
+                <Zip4>3559</Zip4>
+                <DeliveryPoint>74</DeliveryPoint>
+                <CarrierRoute>C051</CarrierRoute>
+                <DPVConfirmation>Y</DPVConfirmation>
+                <DPVCMRA>N</DPVCMRA>
+                <DPVFootnotes>AABB</DPVFootnotes>
+                <Business>N</Business>
+                <CentralDeliveryPoint>Y</CentralDeliveryPoint>
+                <Vacant>N</Vacant>
+            </Address>
+        </AddressValidateResponse>
+    </Response>
+
+</xml>

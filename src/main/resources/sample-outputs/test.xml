@@ -1,0 +1,27 @@
+<AddressValidateRequest USERID="589STUDE0069" PASSWORD="032FL67RN368">
+    <Revision>1</Revision>
+    <Address ID="0">
+        <Address1></Address1>
+        <Address2>42074 Carriage</Address2>
+        <City/>
+        <State>MI</State>
+        <Zip5>48187</Zip5>
+        <Zip4/>
+    </Address>
+</AddressValidateRequest>
+
+
+<AddressValidateRequest USERID="589STUDE0069" PASSWORD="032FL67RN368">
+<Revision>1</Revision>
+<Address ID="0">
+    <Address1>41382 West M-123</Address1>
+    <Address2></Address2>
+    <City>Paradise</City>
+    <State>MI</State>
+    <Zip5>49768</Zip5>
+    <Zip4/>
+</Address>
+</AddressValidateRequest>
+
+https://gis.usps.com/arcgis/rest/services/locators/US_Street/GeocodeServer/findAddressCandidates?Single Line Input=41382 W M 123, PARADISE, MICHIGAN, 49768&SingleLine=41382 W M 123, PARADISE, MICHIGAN, 49768&f=json&outSR={"wkid":102100}&outFields=StPreDir,StPreType,StName,StType,StDir,City,Region,Postal
+

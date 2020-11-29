@@ -1,0 +1,120 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div><h4>Enter</h4></div>
+<div>
+    <form method="POST" action="/autocorrect">
+        <table>
+            <tr>
+                <td>Street address</td>
+                <td><input type="text" name="address2"/></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city"/></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input type="text" name="state"/></td>
+            </tr>
+            <tr>
+                <td>Zip code</td>
+                <td><input type="text" name="zip5"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Get corrected address"/></td>
+            </tr>
+        </table>
+    </form>
+    <form method="POST" action="/address-count">
+        <div th:if="${correctedAddress}">
+            <table>
+                <tr>
+                    <td>Corrected address</td>
+                    <td><input type="text" readonly="readonly" name="correctedAddressLine" size="50"
+                               th:value="${correctedAddress}"/></td>
+                </tr>
+                <tr>
+                    <td>Carrier route ID</td>
+                    <td><input type="text" readonly="readonly" name="carrierRouteID"
+                               th:value="${carrierRoute}"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Get address count in route"/></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div th:if="${totalAddressCount}">
+            <table>
+                <tr>
+                    <td>Total address count in route :</td>
+                    <td data-th-text="${totalAddressCount}"/>
+                </tr>
+            </table>
+
+        </div>
+
+    </form>
+</div>
+
+<div><h4>OR</h4></div>
+
+<div>
+    <form method="POST" enctype="multipart/form-data" action="/upload">
+        <table>
+            <tr>
+                <td>File to upload:</td>
+                <td><input type="file" name="file"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Upload"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <ul>
+        <li th:each="file : ${files}">
+            <a th:href="${file}" th:text="${file}"/>
+        </li>
+    </ul>
+    <form method="get" action="/clear">
+        <table>
+            <tr>
+                <td><input type="submit" value="Clear files"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<br>
+<div>
+    <table>
+        <tr>
+            <td>Developed by:</td>
+            <td>Jayani Sumanka Gerine</td>
+        </tr>
+        <tr>
+            <td>Instructor:</td>
+            <td>Dr. Zhiwei Xu</td>
+        </tr>
+        <tr>
+            <td>University of Michigan(Dearborn)</td>
+            <td>CIS 566</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
