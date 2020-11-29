@@ -1,3 +1,4 @@
+ ![](src/main/resources/screen-shots/sequence.png)
 ##### Steps to run the project
 - If not already present, create a folder `upload-dir` at same level as `src`. This is the folder where uploaded
  files as well as generated reports will be stored.
