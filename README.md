@@ -6,7 +6,11 @@
 #### Sequence diagram
  ![](src/main/resources/screen-shots/sequence.png)
 #### Description
- - The project is implemented by using there different design patterns: Façade design pattern, Builder design pattern and Dependency Injection design pattern. I have used spring MVC Framework to implement this project as a web application.
+ - The project is implemented by using three different design patterns: 
+   1. Façade design pattern 
+   2. Builder design pattern
+   3. Dependency Injection design pattern. 
+ - I have used `Spring MVC Framework` to implement this project as a web application.
  - External APIs used in the application:
    - https://secure.shippingapis.com/ShippingAPI.dll
    - https://gis.usps.com/arcgis/rest/services/locators/US_Street/GeocodeServer/findAddressCandidates
