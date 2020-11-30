@@ -1,15 +1,19 @@
 
 #### Steps to run the project
  - If not already present, create a folder `upload-dir` at same level as `src`. This is the folder where uploaded files as well as generated reports will be stored.
- - To run the project, use the command `mvn spring-boot:run`. This will start the web-application on the port `8080`
+ - To run the project, use the command `./mvnw spring-boot:run`. This will start the web-application on the port `8080`
  - `http://localhost:8080` in any browser will take you the home page of the application.
 #### Sequence diagram
  ![](src/main/resources/screen-shots/sequence.png)
 #### Description
  - The project is implemented by using there different design patterns: Façade design pattern, Builder design pattern and Dependency Injection design pattern. I have used spring MVC Framework to implement this project as a web application.
+ - External APIs used in the application:
+   - https://secure.shippingapis.com/ShippingAPI.dll
+   - https://gis.usps.com/arcgis/rest/services/locators/US_Street/GeocodeServer/findAddressCandidates
+   - https://gis.usps.com/arcgis/rest/services/EDDM/selectNear/GPServer/routes/execute
 ##### Façade: Class Diagram
  ![](src/main/resources/screen-shots/facade.png) 
- - When user uploads a file, it must undergo various processing like storage, parsing, Rest API calls and so on. All these steps are encapsulated in the ProcessUploadFacade class. ProcessUploadFacade constructor initializes all the above services and makes it available to be used. The upload controller does not need to worry about how the file will be processed as it only needs access to processFileUpload method of ProcessUploadFacade.
+ - When user uploads a file, it must undergo various processing like storage, parsing, Rest API calls and so on. All these steps are encapsulated in the ProcessUploadFacade class. `ProcessUploadFacade` constructor initializes all the above services and makes it available to be used. The upload controller does not need to worry about how the file will be processed as it only needs access to `processFileUpload()` method of ProcessUploadFacade.
 ##### Builder: Class Diagram
  ![](src/main/resources/screen-shots/builder.png)
  - There are two types of reports that will be generated. Report1 provides the list of corrected address and carrier route id. Report2 provides the number of addresses in the carrier route id obtained in Report1. Both are .csv file reports. Hence, I have used builder pattern to generate these reports.
